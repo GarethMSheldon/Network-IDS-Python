@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Intrusion Detection System - Battlestar Galactica Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Orbitron', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a16;
+            color: #c0c0ff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 58, 173, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(173, 28, 58, 0.1) 0%, transparent 20%);
+            position: relative;
+        }
+        
+        /* Stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        /* Header */
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(28, 58, 173, 0.5);
+            background: rgba(10, 10, 30, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(28, 58, 173, 0.3) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            color: #3c9dff;
+            text-shadow: 0 0 10px rgba(60, 157, 255, 0.7);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0c8ff;
+            margin-bottom: 1rem;
+        }
+        
+        .warning {
+            background: rgba(173, 28, 58, 0.2);
+            border: 1px solid rgba(173, 28, 58, 0.5);
+            border-radius: 5px;
+            padding: 0.8rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            color: #ff7b9c;
+            font-size: 0.9rem;
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Feature sections */
+        .section {
+            background: rgba(15, 15, 40, 0.7);
+            border: 1px solid rgba(28, 58, 173, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(60, 157, 255, 0.8), transparent);
+            animation: scanline 8s linear infinite;
+        }
+        
+        @keyframes scanline {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        h2 {
+            color: #3c9dff;
+            margin-bottom: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #ff7b9c;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .feature-card {
+            background: rgba(20, 25, 60, 0.5);
+            border-left: 3px solid #3c9dff;
+            padding: 1rem;
+            border-radius: 0 5px 5px 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff7b9c;
+        }
+        
+        .feature-card h3 {
+            color: #a0c8ff;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Requirements */
+        .requirements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .req-item {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(20, 25, 60, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid rgba(28, 58, 173, 0.3);
+        }
+        
+        /* Quick start */
+        .quick-start {
+            background: rgba(20, 40, 80, 0.3);
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            position: relative;
+        }
+        
+        .code-block {
+            background: rgba(5, 10, 20, 0.8);
+            border-left: 3px solid #3c9dff;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            color: #7cfc00;
+            overflow-x: auto;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .code-block::before {
+            content: '>';
+            color: #ff7b9c;
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(28, 58, 173, 0.3);
+            color: #a0c8ff;
+            font-size: 0.9rem;
+        }
+        
+        .bsg-logo {
+            font-family: 'Orbitron', sans-serif;
+            color: #3c9dff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .cylon-eye {
+            width: 60px;
+            height: 20px;
+            background: radial-gradient(circle at 0% 50%, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0) 70%);
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cylon-eye::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            animation: eye-scan 2s linear infinite;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+        
+        @keyframes eye-scan {
+            0% { left: -20px; }
+            50% { left: 60px; }
+            100% { left: -20px; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated stars background -->
+    <div class="stars" id="stars"></div>
+    
+    <header>
+        <div class="header-glow"></div>
+        <h1><i class="fas fa-shield-alt"></i> NETWORK INTRUSION DETECTION SYSTEM</h1>
+        <p class="subtitle">A real-time, signature-based NIDS with GUI - Battlestar Galactica Theme</p>
+        
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i> For educational and defensive cybersecurity use only. Not a replacement for enterprise-grade NIDS like Suricata or Zeek.
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Features Section -->
+        <section class="section">
+            <h2><i class="fas fa-star"></i> CYLON DETECTION FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-satellite-dish"></i> Real-time TCP Monitoring</h3>
+                    <p>Monitor established & listening TCP connections in real-time across Windows systems.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-fingerprint"></i> Signature-based Detection</h3>
+                    <p>Detect port scans, brute-force attempts, and connections to known malicious ports.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Live Statistics Dashboard</h3>
+                    <p>Total connections, unique IPs, top ports, connection rate, and runtime counter.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> Alert Logging</h3>
+                    <p>Severity levels (HIGH/MEDIUM/LOW) with exportable reports and persistent log files.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-terminal"></i> Dark-themed Terminal Log</h3>
+                    <p>Battlestar-style dark terminal interface for monitoring all activity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-memory"></i> In-memory Execution</h3>
+                    <p>Runs entirely in-memory with no external dependencies.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Requirements Section -->
+        <section class="section">
+            <h2><i class="fas fa-cogs"></i> DECK REQUIREMENTS</h2>
+            <div class="requirements">
+                <div class="req-item">
+                    <h3><i class="fab fa-windows"></i> Operating System</h3>
+                    <p>Windows 10/11 or Windows Server 2016+</p>
+                </div>
+                <div class="req-item">
+                    <h3><i class="fas fa-code"></i> PowerShell Version</h3>
+                    <p>PowerShell 5.1 or later</p>
+                </div>
+                <div class="req-item">
+                    <h3><i class="fas fa-user-shield"></i> Privileges</h3>
+                    <p>Administrator rights required (script includes #Requires -RunAsAdministrator)</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Start Section -->
+        <section class="section">
+            <h2><i class="fas fa-rocket"></i> LAUNCH PROCEDURE</h2>
+            <div class="quick-start">
+                <p>To activate the Network Intrusion Detection System:</p>
+                <div class="code-block">Clone or download this repository.</div>
+                <div class="code-block">Open PowerShell as Administrator.</div>
+                <div class="code-block">Navigate to the project folder:<br>cd path\to\network-ids-gui</div>
+                <div class="code-block">Execute the launch script:<br>.\Start-NIDS.ps1</div>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(173, 28, 58, 0.1); border-radius: 5px;">
+                    <h3 style="color: #ff7b9c;"><i class="fas fa-info-circle"></i> DEFENSIVE CYBERSECURITY NOTE</h3>
+                    <p>This tool is designed for defensive cybersecurity purposes to help identify potential threats on your network. Use responsibly and only on networks you own or have permission to monitor.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="cylon-eye"></div>
+        <div class="bsg-logo">BATTLESTAR CYBER DEFENSE</div>
+        <p>Network Intrusion Detection System (GUI) | PowerShell-based Real-time Monitoring</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #8888cc;">"So say we all." - Battlestar Galactica</p>
+    </footer>
+
+    <script>
+        // Create animated stars in the background
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.getElementById('stars');
+            const starsCount = 150;
+            
+            for (let i = 0; i < starsCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 3;
+                
+                // Random brightness
+                const brightness = Math.random() * 0.8 + 0.2;
+                
+                // Set star properties
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.opacity = brightness;
+                
+                // Add twinkling animation
+                const duration = Math.random() * 5 + 3;
+                star.style.animation = `twinkle ${duration}s infinite alternate`;
+                
+                starsContainer.appendChild(star);
+            }
+            
+            // Add CSS for twinkling animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes twinkle {
+                    0% { opacity: 0.2; }
+                    100% { opacity: 0.9; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add scanning effect to section titles
+            const sectionTitles = document.querySelectorAll('h2');
+            sectionTitles.forEach(title => {
+                title.addEventListener('mouseenter', function() {
+                    this.style.textShadow = '0 0 15px rgba(60, 157, 255, 0.9)';
+                });
+                
+                title.addEventListener('mouseleave', function() {
+                    this.style.textShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
