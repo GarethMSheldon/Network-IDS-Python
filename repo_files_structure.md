@@ -433,37 +433,4 @@ Write-Host ""
 
 ---
 
-## 🚀 Quick Setup Instructions
-
-1. **Create the repository on GitHub:**
-   - Go to github.com and create a new repository named `Windows-IDS-Tool`
-   - Don't initialize with README (we'll push our own)
-
-2. **Initialize local repository:**
-   ```powershell
-   cd path\to\your\project
-   git init
-   git add .
-   git commit -m "Initial commit: Windows IDS Tool v1.0.0"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/Windows-IDS-Tool.git
-   git push -u origin main
-   ```
-
-3. **Create a release:**
-   - Go to your GitHub repository
-   - Click "Releases" → "Create a new release"
-   - Tag version: `v1.0.0`
-   - Release title: `Windows IDS Tool v1.0.0`
-   - Add release notes from CHANGELOG.md
-
-4. **Add topics/tags:**
-   - `powershell`
-   - `intrusion-detection`
-   - `network-security`
-   - `ids`
-   - `windows`
-   - `security-tools`
-   - `network-monitoring`
-
-Your repository is now ready! 🎉
+`network-monitoring`
