@@ -1,0 +1,11 @@
+# Network IDS - Python Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+psutil>=5.9.0
+
+# Windows-specific dependencies (only needed on Windows)
+pywin32>=305; sys_platform == 'win32'
+
+# Optional dependencies for enhanced features
+colorama>=0.4.6  # For colored console output
